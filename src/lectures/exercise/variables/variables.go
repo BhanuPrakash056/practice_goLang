@@ -22,7 +22,20 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
+	var favoriteColor = "white"
+	fmt.Println("my favorite color is", favoriteColor)
+	birthYear, age := 2001, 21
+	fmt.Println("birth year ", birthYear, "and age is ", age)
+	var (
+		firstName = "bhanu"
+		lastName  = "prakash"
+	)
+	fmt.Println("name is ", firstName, lastName)
+	ageInDays := 365 * age
+	fmt.Println("age in days", ageInDays)
 }
