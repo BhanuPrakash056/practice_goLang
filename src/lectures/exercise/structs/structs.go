@@ -19,6 +19,35 @@ package main
 
 import "fmt"
 
-func main() {
+type coordinates struct {
+	x, y int
+}
+type rectangle struct {
+	a coordinates
+	b coordinates
+}
 
+func width(rect rectangle) int {
+	return (rect.b.x - rect.a.x)
+}
+
+func length(rect rectangle) int {
+	return (rect.a.y - rect.b.y)
+}
+func area(rect rectangle) int {
+	return length(rect) * width(rect)
+}
+func perimeter(rect rectangle) int {
+	return 2 * (length(rect) + width(rect))
+}
+func printInfo(rect rectangle) {
+	fmt.Println("Area is ", area(rect))
+	fmt.Println("Parameter is ", perimeter(rect))
+}
+func main() {
+	rect := rectangle{a: coordinates{0, 7}, b: coordinates{10, 0}}
+	printInfo(rect)
+	rect.a.y *= 2
+	rect.b.x *= 2
+	printInfo(rect)
 }
